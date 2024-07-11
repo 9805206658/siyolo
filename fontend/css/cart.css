@@ -1,0 +1,190 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    background-color: #f4f4f4;
+    }
+.cart_container
+{
+    display: flex;
+    column-gap:10px;
+    margin:50px 0px 0px 0px;
+    justify-content: center;
+    background-color: #f4f4f4;
+
+}
+.cart_wrapper
+{
+width:42vw;
+display:flex;
+flex-direction:column;
+row-gap:30px;
+/* border:3px solid red; */
+}
+.order_summary
+{
+    
+    width:18vw;
+    height:30vh;
+    border:3px solid blue;
+}
+.select_all
+{
+    /* border:3px solid red; */
+    padding:10px 10px;
+    background-color: white;
+}
+
+.delete
+{
+    float:right;
+    /* margin-right:30px; */
+}
+
+.cart_item_container
+{
+    /* border:3px solid green; */
+    display:flex;
+    flex-direction:column;
+    row-gap:50px;
+}
+.cart_item{
+display:flex;
+align-items: center;
+column-gap:40px;
+padding:10px 10px;
+background-color: white;
+}
+.cart_item_info
+{
+    width:350px;
+}
+.cart_item_price    
+{
+    text-align: center;
+    display:flex;
+    flex-direction:column;
+    row-gap:5px;
+}
+ .current_price
+ {
+    color:orange;
+ }
+ .previous_price
+ {
+color:rgba(0, 0, 0, 0.226);
+
+ }
+ 
+
+ .discount_percent
+ {
+font-weight: bold;
+ }
+
+.cart_item_image
+{
+    width:100px;
+    height:100px;
+
+}
+.ibtn
+{
+    width:30px;
+    height:30px;
+}
+.button_container
+{
+    display:flex;
+    column-gap: 5px;
+    /* border:3px solid red; */
+}
+
+/* pefroming order summary */
+.order_summary_container
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    /* border:3px solid red; */
+    width:18vw;
+    background-color:white;
+    padding:10px 10px;
+    
+}
+.item_value
+{
+    float:right;
+}
+.common_item
+{
+
+    color:rgba(0, 0, 0, 0.308);
+    font-size:25px;
+}
+.total_price
+{
+    color:orange;
+}
+#apply
+{
+    background-color:#25a5d8; 
+    width:30%;
+    height:40px;
+    border:none;
+}
+#checkout
+{
+    background-color: #f57224;
+    border-radius:10px;
+    height:40px;
+    color:white;
+    font-size:20px;
+}
+.voucher_info
+{
+    display:flex;
+    column-gap: 10px;
+}
+#voucher_code
+{
+   
+    height:40px;
+    border-radius:10px;
+    column-gap:27x;
+    padding:0px 0px 0px 10px;
+    width:70%;
+}
+
+.no_cart
+{
+    width:100vw;
+    height:50vh;
+    color:#f55f24;
+    display: none;
+    row-gap:20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+
+}
+.continue_shop
+{
+    padding:20px 30px;
+    text-transform: uppercase;
+  font-size:15px;
+    font-weight:400px;
+    color:#f55f24;
+
+    border:1px solid orange;
+    
+    
+}
+
+.continue_shop:hover
+{
+    background-color: rgba(128, 128, 128, 0.432);
+    
+}
+

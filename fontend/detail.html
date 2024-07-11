@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/detail.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="productListing.html">Product List</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">login <i class="fa-regular fa-user"></i></a></li>
+                <li><a href="signup.html">sign up</a></li>
+            </ul>
+            
+              
+        </nav>
+    </header>
+<div class="discription_container">
+   <div id="product_image" class="dc_item">
+    <img src="/blue.jpg" id="img">
+   </div>
+
+   <div  id="product_discription" class="dc_item">
+       <div id="about_product" class="prod_item"><p>this the bikal shrestha product</p></div>
+       <div id="product_brand" class="prod_item">sikamarau</div>
+       <div id="product_price" class="prod_item">Rs 20</div>
+        <div id="break_info" class="prod_item">cacsss ssss</div>
+        <div class="btn_container prod_item">
+            <button  class="qbtn">
+                +
+             </button>
+             <div id="display_qty"></div>
+             <button class="qbtn" >
+                -
+             </button>
+        </div>
+
+
+       <div class="btn_container prod_item" >
+           <button id="buy_now"  class="btn_item">Buy Now</button>
+           <button id="add_cart" class="btn_item"> Add Cart</button>
+       </div>
+       <button id="rate">
+        Rate Us  <i class="fa-solid fa-star" style="color:orange;" ></i>
+      </button>
+
+
+      <div class="rate_container">
+        <button id="close"><i class="fa-solid fa-xmark"></i></button>
+        <i  id="main_start" class="fa-solid fa-star" style="color:orange; " ></i>
+     
+            <h3 id="rate_us">Rate Us</h3>
+             <h2 id="rate_title">hellow</h2>
+        
+          <div>
+            <i class="fa-regular fa-star"  onClick="startClick(event)"  style="color:white; font-size:25px;" id="start1" data="1"></i>
+            <i class="fa-regular fa-star"  onClick="startClick(event)"  style="color:white; font-size:25px;" id="start2" data="2"></i>
+            <i class="fa-regular fa-star"  onClick="startClick(event)"  style="color:white; font-size:25px;" id="start3" data="3"></i>
+            <i class="fa-regular fa-star"  onClick="startClick(event)"  style="color:white; font-size:25px;" id="start4" data="4"></i>
+            <i class="fa-regular fa-star"  onClick="startClick(event)"  style="color:white; font-size:25px;" id="start5" data="5"></i>
+          </div>
+        <input type="text" id="review"  placeholder="Enter your review related to the product" max="2000" required>
+        <button id="rate_submit" value="Rate"  onClick="start_submit()">Rate</button>
+     </div>
+
+       
+   </div>
+
+     <div id="product_deliver" class="dc_item">
+        <div id="deliver" class="d_item">
+            <p class="common_color"> Delivery</p>
+            <div id="deliver_item1" class="myFlex">
+               <i class="fa-solid fa-location-dot" ></i>
+               <p>Bagmati, Kathmandu Metro 22 <br> Newroad Area, Newroad	</p>
+               <a href="#change">change</a>
+            </div>
+
+            <div id="deliver_item2" class="myFlex">
+                <i class="fa-regular fa-hand-lizard"></i>
+                   <p><span>Standard Delivery</span> 19 Jun - 20 Jun<br>
+                    2 - 3 day(s) 	</p>
+                   <p> Rs 70</p>
+             </div>
+             <div id="deliver_item2" class="myFlex">
+                <i class="fa-solid fa-location-dot" ></i>
+                   <p>Cash on deliver available</p>
+             </div>
+       
+            </div>
+
+       
+
+
+        <div id="service" class="d_item">
+            <p class="common_color">Service</p>
+            <div id="deliver_item2" class="myFlex">
+                <i class="fa-regular fa-hand-lizard"></i>
+                   <p>
+                    <span class="blue_span">100% Authentic from Trusted Brand</span>
+                    <br>
+                    or Get 2x Your Money Back	
+                   </p>
+             </div>
+
+             <div id="deliver_item2" class="myFlex">
+                <i class="fa-regular fa-hand-lizard"></i>
+                   <p>
+                     <span class="blue_span"> 14 days free & easy return</span>
+                      <br>
+                    Change of mind is not applicable	
+                   </p>
+             </div> 
+              <div id="deliver_item2" class="myFlex">
+                <i class="fa-regular fa-hand-lizard"></i>
+                   <p> Warranty not available</p>
+             </div>
+
+         </div>
+
+
+         
+
+
+        <div id="sold_by" class="d_item">
+            <p class="common_color">Sold by</p>
+            <div id="sold_info">
+                <p>Avi Trade Link </p>
+                 <div id="chat">
+                    <i class="fa-regular fa-comment"></i>
+                 </div>
+            </div>
+
+            <div id="rating_info" class="myFlex" style="height:auto;">
+                  <div id="postive" class="r_item">
+                      <p class="common_color"> postive Seller Rating</p>
+                      <h3>98%</h3>
+                  </div>
+                  <div id="ship" class="r_item">
+                      <p class="common_color"> ship on timme</p>
+                      <h3>98%</h3>
+                  </div>
+                  <div id="response" class="r_item">
+                      <p class="common_color"> Chat Response Rate</p>
+                      <h3>100%</h3>
+                  </div>
+            </div>
+
+            <div  id="visitor_link">
+                <a href="#visit store">visit store</a>
+            </div>
+
+        </div>
+    </div>
+</div> 
+
+
+
+<!-- rating and review start -->
+
+<h3>Rating and Review</h3>
+
+<div class="quantity_wrapper">
+   
+<section id="rating_information" >
+           <div id="rating_per" >
+               <p>
+                <!-- <span class="rating_number" style="margin:10px 0px 10px 0px"></span> -->
+                 <span id="avg_rating"  class="rating_number">4.1</span><span class="rating_status"><i class="fa-regular fa-star"></i>very good</span></p>
+               <div class="progress_container">
+                   <div >
+                       <i class="fa-solid fa-star "  style="color:orange;"></i>
+                       <i class="fa-solid fa-star "  style="color:orange;"></i>
+                       <i class="fa-solid fa-star "  style="color:orange;"></i>
+                       <i class="fa-solid fa-star "  style="color:orange;"></i>
+                       <i class="fa-solid fa-star "  style="color:orange;"></i>
+                   </div>
+               </div>
+              <p id="total_rating">39 rating</p>
+         </div>
+          <div id="rating_detail">
+
+            <div class="wrapper">
+                <div >
+                  <i class="fa-solid fa-star" style="color:orange;" ></i>
+                  <i class="fa-solid fa-star" ></i>
+                  <i class="fa-solid fa-star" > </i>
+                  <i class="fa-solid fa-star" ></i> 
+                  <i class="fa-solid fa-star" ></i>
+              </div>
+                 <div class="container">
+                     <div class="progress" id="progress1"></div>
+                 </div>
+                  <span class="rating_number">3</span>
+          </div>
+          
+
+          <div class="wrapper">
+            <div>
+              <i class="fa-solid fa-star" style="color:orange;" ></i>
+              <i class="fa-solid fa-star" style="color:orange;"></i>
+              <i class="fa-solid fa-star" >    </i>
+              <i class="fa-solid fa-star" ></i> 
+              <i class="fa-solid fa-star" ></i>
+            </div>
+               <div class="container">
+                   <div class="progress" id="progress2"></div>
+               </div>
+                <span class="rating_number">3</span>
+          </div>
+
+          <div class="wrapper">
+            <div>
+              <i class="fa-solid fa-star" style="color:orange;" ></i>
+              <i class="fa-solid fa-star" style="color:orange;"></i>
+              <i class="fa-solid fa-star" style="color:orange;">    </i>
+              <i class="fa-solid fa-star" ></i> 
+              <i class="fa-solid fa-star" ></i>
+            </div>
+               <div class="container">
+                   <div class="progress" id="progress3"></div>
+               </div>
+                <span class="rating_number">3</span>
+          </div>
+
+          <div class="wrapper">
+            <div >
+                <i class="fa-solid fa-star" style="color:orange;" ></i>
+                <i class="fa-solid fa-star" style="color:orange;"></i>
+                <i class="fa-solid fa-star" style="color:orange;">    </i>
+                <i class="fa-solid fa-star" style="color:orange;"></i> 
+                <i class="fa-solid fa-star" ></i>
+            </div>
+               <div class="container">
+                   <div class="progress" id="progress4"></div>
+               </div>
+               <span class="rating_number">3</span>
+          </div>
+        
+
+           <div class="wrapper">
+                <div>
+                    <i class="fa-solid fa-star" style="color:orange;" ></i>
+                    <i class="fa-solid fa-star" style="color:orange;"></i>
+                    <i class="fa-solid fa-star" style="color:orange;">    </i>
+                    <i class="fa-solid fa-star" style="color:orange;"></i> 
+                    <i class="fa-solid fa-star" style="color:orange;"></i>
+                    
+                </div>
+                <div class="container">
+                    <div class="progress" id="progress5" ></div>
+                </div>
+                <span class="rating_number">3</span>
+            </div>
+            
+     </div>
+      </section>
+</div>
+
+
+<section class="wrapper"  id="start_button" style="margin:10px 0px 0px 0px">
+    <button onclick="rating_user_info(event)" class="btn_rate"> <i class="fa-solid fa-star"></i>  <span>5</span></button>
+    <button onclick="rating_user_info(event)" class="btn_rate"> <i class="fa-solid fa-star"></i>  <span>4</span></button>
+    <button onclick="rating_user_info(event)" class="btn_rate"> <i class="fa-solid fa-star"></i>  <span>3</span></button>
+    <button onclick="rating_user_info(event)" class="btn_rate"> <i class="fa-solid fa-star"></i>  <span>2</span></button>
+    <button onclick="rating_user_info(event)" class="btn_rate"> <i class="fa-solid fa-star"></i>  <span>1</span></button>
+</section>
+<!-- here displaying the rating -->
+ <!-- <hr> -->
+ <section class="display"></section>
+ 
+<footer >
+    <div class="footer_header">
+        JOIN SIYOLO AND GET 10%FF 
+        <button><a href="signup.html">SIGN UP FOR FREE </a> <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+       <div  class="footer_container">
+           <div class="footer_item">
+              <h6 class=footer_item_title>TYPES OF BIKES</h6>
+              <li><a href="#">Road Bikes</a></li>
+              <li><a href="#">Mountain Bikes</a></li>
+              <li><a href="#">Hybrid and Commuter</a></li>
+              <li><a href="#">Speciality Bike</a></li>
+            </div>
+
+
+           <div class="footer_item">
+               <h6 class="footer_item_title">SPORTS</h6>
+               <li><a href="#">Cricket</a></li>
+               <li><a href="#">Runing</a></li>
+               <li><a href="#">Football</a></li>
+               <li><a href="#">Gym|Training</a></li>
+               <li><a href="#">Tenish</a></li>
+           </div>
+
+           <div class="footer_item">
+               <h6 class="footer_item_title">SUPPORT</h6>
+               <li><a href="#">Help</a></li>
+               <li><a href="#">Customer Services</a></li>
+               <li><a href="#">Returns&Exchanges</a></li>
+               <li><a href="#">Shipping</a></li>
+               <li><a href="#">Store Finder</a></li>
+           </div>
+
+           <div class="footer_item">
+               <h6 class="footer_item_title">COMPNAY INFO</h6>
+               <li><a href="#">About Us</a></li>
+               <li><a href="#">Siyolo stores</a></li>
+               <li><a href="#">Siyolo apps</a></li>
+               <li><a href="#">Entity Details</a></li>
+               <li><a href="#">Careers</a></li>
+           </div>
+
+           <div class="footer_item">
+               <h6 class="footer_item_title">Follow Us
+             </h6>
+               <li>  <i class="fa-brands fa-instagram"></i></li>
+                <li> <i class="fa-brands fa-linkedin"></i></li>
+                <li> <i class="fa-brands fa-facebook"></i></li>
+             </div>
+             
+            
+</footer>
+
+
+  <script src="js/global.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

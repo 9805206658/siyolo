@@ -1,0 +1,443 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body
+{
+    position:relative;
+}
+.discription_container
+{
+    display:flex;
+    justify-content: center;
+    padding-bottom:20px;
+}
+
+
+.dc_item
+{
+width:25vw;
+height:80vh;
+
+}
+
+
+#product_image img
+{
+   
+    width:23vw;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.712);;
+    box-sizing:border-box;
+    margin:auto;
+}
+
+
+#product_discription
+{
+    display: flex;
+    row-gap:0px;
+    box-sizing: border-box;;
+    flex-direction:column;
+    background-color: rgba(255, 255, 255, 0.712);;
+ }
+ .prod_item
+ {
+     height:13vh;
+     width:17vw;
+     padding:20px;
+     border-bottom: 3px solid rgba(0, 0, 0, 0.466);
+     text-align:center;
+     box-sizing:border-box;
+ }
+
+ #product_discription .prod_item.prod_item:first_chid
+ {
+    overflow: scroll;
+ }
+
+
+ /* here displaying product deliver information */
+#product_deliver
+{
+    display:flex;
+    flex-direction:column;
+    background-color: #fafafa;;
+}
+#about_product
+{
+    color:black;
+    font: 300;
+    font-size:20px;
+}
+
+#product_price
+{
+    font-size:20px;
+    color:red;
+
+}
+#product_brand, #break_info
+{
+    color:black;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.btn_container
+{
+    display:flex;
+    column-gap: 30px;
+    justify-content: center;
+    border-bottom:none;
+ 
+}
+.btn_item
+{
+    width:225px;
+    height:50px;
+    color:white;
+    font-size:25px;
+}
+#deliver
+{
+    display:flex;
+    flex-direction: column;
+}
+
+#buy_now
+{
+    border:3px solid #2abbe8;
+    background-color:#2abbe8;
+   
+}
+#add_cart
+{
+    
+    background-color:#f57224;
+}
+/* desigining the deliver related information */
+.myFlex
+{
+    display:flex;
+   column-gap:30px;
+   padding:10px;
+   box-sizing:border-box;
+  
+}
+
+#deliver_item2 span
+{
+    font-weight: bold;
+}
+
+.d_item{
+   
+    margin:10px 0px 30px 0px;
+    padding:10px;
+    position: relative;
+    bottom:13px;
+    
+}
+
+.blue_span
+{
+    color:blue;
+}
+.r_item {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border:3px solid red; */
+
+}
+.r_item p,h3{
+text-align:center;
+}
+#visitor_link
+{
+   display:flex;
+   justify-content: center;
+   box-sizing:border-box;
+   padding:20px 0px 20px 0px;
+}
+
+#sold_info
+{
+    display:flex;
+    margin:px 0px  0px;
+    column-gap: 341px;
+    justify-content: center;
+}
+
+.common_color
+{
+
+        color: #757575;
+
+}
+#sold_by
+{
+   display: flex;
+   flex-direction: column;
+   row-gap:10px;
+    box-sizing:border-box;
+    
+
+}
+#rating_information
+{
+    width:100vw;
+    display: flex;
+
+}
+
+#display_qty
+{
+    width:50px;
+    height:50px;
+    line-height:50px;
+    font-size:25px;
+}
+
+
+.quantity_wrapper
+{
+    display:flex;
+  justify-content: center;
+}
+
+
+.qbtn
+{
+    width:50px;
+    height:50px;
+    font-size:25px;
+    font-weight:bold;
+}
+#rating_information
+{
+    width:50vw;
+    display:flex;
+    margin:10px 0px 0px 0px;
+    justify-content:center;
+    padding:20px 0px 0px 0px;
+    column-gap:20px;
+
+}
+.rating_number
+{
+    font-size:20px !important;
+    font-weight:bold !important;
+
+}
+
+h3{
+    text-align:center;
+    background-color:#757575;
+    font-weight: normal;
+    color:rgba(0, 0, 0, 0.425);
+}
+
+
+
+
+.rating_status
+{
+    color:white;
+    background-color:orange;
+    font-size:20px;
+    padding:10px;
+    margin-left:10px;
+}
+
+#rating_detail
+{
+
+border-left:3px solid rgba(0, 0, 0, 0.479);
+padding-left:24px;
+
+}
+.progress
+{
+    background-color:rgba(255, 166, 0, 0.767);;
+    /* height:10px; */ 
+}
+.progress_container
+{
+    width:106px;        
+    margin:20px 0px;
+
+}
+
+
+#total_rating
+{
+    font-weight:400;
+    font-size:25px;
+
+}
+
+.wrapper
+{
+    display:flex;
+    justify-content:center;
+    column-gap:10px;
+}
+
+.wrapper:first-child
+{
+color:red;
+}
+
+
+.container
+{
+    background-color: white;
+    border:3px solid rgba(0, 0, 255, 0.171);
+    width:100px;
+    border-radius:10px;
+    height:10px;
+}           
+
+#rating_detail i
+{
+color:rgba(0, 0, 0, 0.397);
+}
+
+
+.start_color
+{
+color:orange;
+}
+
+.btn_rate
+{
+    width:50px;
+    height:50px;
+}
+
+.btn_rate i
+{
+    color:orange;
+}
+
+#rate
+{
+    width:100px;
+    font-size:15px;
+    background-color:red;
+    color:white;
+    font-weight:bold;
+    margin:auto;
+    padding:5px 0px ;
+    border-radius:20px;
+
+}
+/* here writing the rating related design */
+.rate_container
+{
+    width:600px;
+    z-index:3;
+    top:45vh;
+    background-color:black;
+    display:none;
+    flex-direction:column;
+    row-gap:15px;
+    position:absolute;
+    align-items:center;
+}
+#close{
+   position: relative;
+   left:285px;
+   top:2px;
+   font-weight:100;
+   border:3px solid white;
+   font-size:30px;
+   /* padding:2px; */
+  
+   
+}
+#main_start
+{
+    font-size:50px;
+    position: absolute;
+    top:-10px;
+}
+
+.rate_container h3{
+    text-transform:uppercase;
+    color:rgba(255, 255, 0, 0.603);
+    margin:0px 0px;
+}
+#rate_us{
+    padding:0px;
+    margin:0px;
+}
+#rate_title
+{
+    /* margin:0px 0px 15px 0px; */
+    text-transform: capitalize;
+    font-weight:400px;
+    color:white;
+}
+#review
+{
+width:300px;
+font-size:15px;
+padding:0px 7px;
+height:25px;
+border-radius:10px;
+}
+
+#rate_submit
+{
+    width:350px;
+    text-align:center;
+    background-color:yellow;
+    border-radius:20px;
+    color:black;
+    font-weight:300px;
+    font-size:20px;
+    padding:8px 0px;
+    margin-bottom:30px;
+    
+}
+.display
+{
+    /* border:3px solid red; */
+    display:flex;
+    margin:30px 0px 0px 0px;
+    flex-direction:column;
+    row-gap:3px;
+   
+}
+.customer_name
+{
+    font-family: "Sofia", sans-serif;
+    padding:10px 0px 10px 30px;
+    text-shadow:2px 3px 5px red;
+}
+
+.review{
+    padding:10px 0px 10px 30px;
+    /* text-shadow:2px 3px 5px red; */
+}
+
+.rating_time
+{
+ float:right;
+ padding:10px 30px 10px 0px;
+ }
+ .rating_container
+ {
+    border:0.5px solid black;
+    width:100vw;
+    /* margin:auto; */
+    background-color: rgba(0, 0, 0, 0.486);;
+ }
+ /* start_container
+ {
+    display:flex;
+    
+ } */

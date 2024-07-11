@@ -1,0 +1,88 @@
+#login{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap:10px;
+    align-items: center;
+    background-image:url("/backgroud_login.jpeg");
+    background-size:cover;
+}
+.login_wrapper
+{
+    /* border:3px solid red;/ */
+    padding:10px;
+    background-color:rgba(0, 0, 0, 0.603);
+    box-shadow:3px 3px 3px black;
+    border-radius:20px;
+}
+.login_title{
+    text-align: center;
+    border:3px soid blue;
+    padding:10px;
+    text-shadow:3px 3px 3px red;
+    font-weight:bold;
+    font-size:35px;
+    color:white;
+}
+
+
+.login_item{
+    width:300px;
+    height:35px;
+    background-color: rgba(255, 255, 255, 0.93);
+    margin:auto;
+    font-size:20px;
+    text-align:center;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+.btn_login{
+    width:100%;
+    text-align:center;
+    height:30x;
+    margin:10px 0px 10px 0px;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:10px;
+    color:black;
+    padding:10px;
+    background-color:white;
+}
+.btn_container
+{
+    display:flex;
+    column-gap:30px;
+    align-items:center;
+    
+}
+.btn_color
+{
+color:rgba(255, 255, 255, 0.644);
+
+}
+#seller{
+    width:20px;
+    
+}
+#buyer{
+    width:20px;
+}
+
+#myForm label{
+    color:rgba(255, 255, 255, 0.644);
+    font-weight:200px;
+    font-size:20px;
+
+}
+#no_account
+{
+    text-align:center;
+}
+#no_account a
+{
+    text-decoration-line: none;
+    font-weight: bold;
+    color:white;
+    
+}

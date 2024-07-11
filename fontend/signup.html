@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="productListing.html">Product List</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">login <i class="fa-regular fa-user"></i></a></li>
+                <li><a href="signup.html">sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="whole_signup_wrapper">
+       <div class="signup_header">
+         <h2>Create Siyolo account</h2>
+         <p>already member I ? &nbsp;<a href="login.html">login here</a></p>
+       </div>
+      <div class="signup_wrapper">
+         <div class="signup_first_col">
+             <form>
+                <label for="user" class="head_title_bold">user:</label><br>
+                 <label for="seller">seller
+                     <input type="radio" name="user" id="seller" value="seller"/>
+                 </label>
+                 <label for="buyer"  >buyer
+                     <input type="radio" name="user" id="buyer" value="buyer"/>
+                 </label>
+                 <br>
+                 <label for="phone" class="head_title_bold">Contact number:</label><br>
+                 <input type="number" id="phone" placeholder="Please enter the contact number" class="first_col_item"/><br>
+                 <label for="password" class="head_title_bold">Password:</label><br>
+                 <input type="password" id="password" placeholder="Please enter the password"  class="first_col_item"/><br>
+                 <input type="password" id="confirm_password" placeholder="Please enter the confirm password"  class="first_col_item"/><br>
+                 <label for="gender" class="head_title_bold"    >Gender:</label><br>
+                     <label for="male">Male
+                         <input type="radio" name="gender" value="male" id="male" >
+                      </label>
+                     <label for="female">Female
+                         <input type="radio"  name="gender" value="Female" name="Female" id="female" />
+                     </label>
+                     <label for="female">Other
+                        <input type="radio"  name="gender" value="Others" name="Female" id="female" />
+                    </label>
+                 <br>
+                 <label for="birthday" class="head_title_bold"          >Birthday:</label><br>
+                 <input type="date" id="dob" class="first_col_item"/>
+              </form>
+         </div>
+   
+
+
+        <div class="signup_first_col">
+            <form>
+                <label for="full_name" class="head_title_bold">full name *
+                </label><br>
+                <input type="text" id="full_name" name="fullName" placeholder="Enter your full name" required/>
+                <br>
+                <label for="terms_condition">I accept terms and condition</label>
+                <input type="checkbox" name="terms" id="terms_condition">
+                <br>
+                <input type="button"  id="btn_signup" value="Sign Up"/>
+           </form>
+        </div>
+   </div>
+
+   <footer >
+    <div class="footer_header">
+        JOIN SIYOLO AND GET 10%FF 
+        <button><a href="signup.html">SIGN UP FOR FREE </a> <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <div  class="footer_container">
+        <div class="footer_item">
+           <h6 class=footer_item_title>TYPES OF BIKES</h6>
+           <li><a href="#">Road Bikes</a></li>
+           <li><a href="#">Mountain Bikes</a></li>
+           <li><a href="#">Hybrid and Commuter</a></li>
+           <li><a href="#">Speciality Bike</a></li>
+         </div>
+
+
+        <div class="footer_item">
+            <h6 class="footer_item_title">SPORTS</h6>
+            <li><a href="#">Cricket</a></li>
+            <li><a href="#">Runing</a></li>
+            <li><a href="#">Football</a></li>
+            <li><a href="#">Gym|Training</a></li>
+            <li><a href="#">Tenish</a></li>
+        </div>
+
+        <div class="footer_item">
+            <h6 class="footer_item_title">SUPPORT</h6>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Customer Services</a></li>
+            <li><a href="#">Returns&Exchanges</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Store Finder</a></li>
+        </div>
+
+        <div class="footer_item">
+            <h6 class="footer_item_title">COMPNAY INFO</h6>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Siyolo stores</a></li>
+            <li><a href="#">Siyolo apps</a></li>
+            <li><a href="#">Entity Details</a></li>
+            <li><a href="#">Careers</a></li>
+        </div>
+
+        <div class="footer_item">
+            <h6 class="footer_item_title">Follow Us
+            </h6>
+            <li>  <i class="fa-brands fa-instagram"></i></li>
+             <li> <i class="fa-brands fa-linkedin"></i></li>
+             <li> <i class="fa-brands fa-facebook"></i></li>
+         </div>
+</footer>
+<script src="js/global.js"></script>
+  <script src="js/signup.js"></script>
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seller page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/seller.css"/>
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="productListing.html">Product List</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">login <i class="fa-regular fa-user"></i></a></li>
+                <li><a href="signup.html">sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- here creating table show the information of the product -->
+    <div class="product_info_wrapper" id="product_info_wrapper">
+        <table id="product_info">
+         </table>
+         <button id="add_item">
+             Add item
+         </button>
+     </div>
+    <!-- here overlaying the itme -->
+     <div id="overlay">
+        <form>
+            <input id="product_id" placeholder="Enter product_id"  type="number" maxlength="2" name="product_id" size="2">
+            <br>
+            <input  id="seller_id" placeholder="Enter the seller_id" type="nubmer" maxlength="2" name="seller_id" size="2">
+            <br>
+            <input  id="brand" placeholder="Enter the brand of the cycle" type="text" name="brand">
+            <br>
+            <input id="type" placeholder="Enter  the type of the cycle" type="text" name="type">
+            <br>
+            <input  id="frame_material" placeholder="Enter the cyle brand-material" type="text" name="brand_material">
+            <br>
+            <input  id="weight" placeholder="Enter the weight of the cycle" type="number" name="weight">
+            <br>
+            <input  id="color" placeholder="Enter the color of the cycle" type="text" name="color">
+            <br>
+            <input  id="price" placeholder="Enter the price of the cycle" type="number" name="price" >
+            <br>
+            <input id="warrenty_period" palceholder="Enter the warrenty time" type="date" name="warrenty_period">
+            <label  for="image">chose the image file:</label>
+            <input id="image" placeholder="upload the photo of the cycle" type="file" name="picture" id="picture">
+            <br>    
+             <input type="text" placeholder="Enter the break "  name="break" id="Break">
+            <br>
+             <input type="text" placeholder="Enter the gear " name="gear" id="gear">
+            <br>
+            <input type="text" placeholder="Enter the discription of the cycle" name="discription" id="discription" required>  
+
+            
+            <input type="submit"  id="confirm" class="btn_submit" name="btn_submit"></button>
+        </form>
+        </div>
+        
+
+    <script src="js/global.js"></script>
+    <script src="js/seller.js"></script>
+    
+</body>
+</html>

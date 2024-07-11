@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart.html</title> 
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/cart.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="productListing.html">Product List</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">login <i class="fa-regular fa-user"></i></a></li>
+                <li><a href="signup.html">sign up</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <section class="cart_container">
+        <div class="cart_wrapper">
+            <div class="select_all">
+                <div class="delete">
+                    <i class="fa-solid fa-trash" data="all" onclick="delete_card_item(event)" ></i><span>delete</span>
+                </div>
+                <input type="checkbox" id="select_all" onclick="check_all()" name="select_all" value="select_all" checked/>
+                <label for="select_all">Select All</label>
+            </div>
+
+            <div class="cart_item_container">
+         </div>
+
+     </div>
+
+
+
+        <div class="order_summary_container">
+            <h2>Order Summary</h2>
+            <div class="order_summary_item">
+                <span class="item_value" id="subtotal">Rs 976</span>
+                <span class="commont_item">subtotal(2item)</span>
+            </div>
+
+            <div  class="order_summary_item">
+                <span class="item_value" id="shipping_fee">Rs 976</span>
+                <span class="commont_item">Shipping Fee</span>
+             </div>
+
+            <div class="voucher_info order_summary_item" ">
+                <input type="text" id="voucher_code" placeholder="Enter the voucher Code"> 
+                <button id="apply">Apply</button>
+            </div>
+
+            <div class="order_summary_item">
+                <span class="item_value total_price" id="total_price">Rs 976</span>
+                <span>Total</span>
+             </div>
+             <button id="checkout">Proced to Checkout</button>
+
+     </div>
+
+    </section>
+
+    <section class="no_cart">
+          <p>There are no item in the cart</p>
+           <button class="continue_shop" onclick="continue_shop()">
+            Continue Shooping
+           </button>
+    </section>
+    <footer >
+        <div class="footer_header">
+            JOIN SIYOLO AND GET 10%FF 
+            <button><a href="signup.html">SIGN UP FOR FREE </a> <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div  class="footer_container">
+            <div class="footer_item">
+               <h6 class=footer_item_title>TYPES OF BIKES</h6>
+               <li><a href="#">Road Bikes</a></li>
+               <li><a href="#">Mountain Bikes</a></li>
+               <li><a href="#">Hybrid and Commuter</a></li>
+               <li><a href="#">Speciality Bike</a></li>
+             </div>
+
+
+            <div class="footer_item">
+                <h6 class="footer_item_title">SPORTS</h6>
+                <li><a href="#">Cricket</a></li>
+                <li><a href="#">Runing</a></li>
+                <li><a href="#">Football</a></li>
+                <li><a href="#">Gym|Training</a></li>
+                <li><a href="#">Tenish</a></li>
+            </div>
+
+            <div class="footer_item">
+                <h6 class="footer_item_title">SUPPORT</h6>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Customer Services</a></li>
+                <li><a href="#">Returns&Exchanges</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Store Finder</a></li>
+            </div>
+
+            <div class="footer_item">
+                <h6 class="footer_item_title">COMPNAY INFO</h6>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Siyolo stores</a></li>
+                <li><a href="#">Siyolo apps</a></li>
+                <li><a href="#">Entity Details</a></li>
+                <li><a href="#">Careers</a></li>
+            </div>
+
+            <div class="footer_item">
+                <h6 class="footer_item_title">Follow Us
+                </h6>
+                <li>  <i class="fa-brands fa-instagram"></i></li>
+                 <li> <i class="fa-brands fa-linkedin"></i></li>
+                 <li> <i class="fa-brands fa-facebook"></i></li>
+             </div>
+</footer>
+    <script src="./js/global.js"></script>
+    <script  src="./js/cart.js"></script>
+
+
+</body>
+</html>
