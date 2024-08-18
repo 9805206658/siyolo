@@ -87,7 +87,7 @@ async function uploadInfo(event) {
     // alert("i am click");
     event.preventDefault();
     // Get the form elements
-    const product_id = document.getElementById("product_id").value;
+    // const product_id = document.getElementById("product_id").value;
     const seller_id = document.getElementById("seller_id").value;
     const brand = document.getElementById("brand").value;
     const type = document.getElementById("type").value;
@@ -105,7 +105,7 @@ async function uploadInfo(event) {
 
     // Create a FormData object to handle file uploads
     const formData = new FormData();
-    formData.append('product_id', product_id);
+    // formData.append('product_id', product_id);
     formData.append('seller_id', seller_id);
     formData.append('brand', brand);
     formData.append('type', type);
@@ -132,9 +132,8 @@ async function uploadInfo(event) {
 
         const data = await response.json();
         console.log(data);
-// 
         overlay.style.display="none";
-        Display_info();
+        window.location.replace("productListing.html");
 
     } catch (error) {
         console.error('Error:', error);

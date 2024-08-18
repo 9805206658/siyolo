@@ -324,14 +324,13 @@ color:orange;
 
 #rate
 {
-    width:100px;
-    font-size:15px;
+    font-size:20px;
     background-color:red;
     color:white;
     font-weight:bold;
     margin:auto;
-    padding:5px 0px ;
-    border-radius:20px;
+    padding:15px 11px ;
+    border-radius:10px;
 
 }
 /* here writing the rating related design */
@@ -340,6 +339,7 @@ color:orange;
     width:600px;
     z-index:3;
     top:45vh;
+    border-radius: 10px;
     background-color:black;
     display:none;
     flex-direction:column;
@@ -350,10 +350,11 @@ color:orange;
 #close{
    position: relative;
    left:285px;
+   padding:3px 5px;
    top:2px;
    font-weight:100;
    border:3px solid white;
-   font-size:30px;
+   font-size:20px;
    /* padding:2px; */
   
    
@@ -383,9 +384,8 @@ color:orange;
 }
 #review
 {
-width:300px;
-font-size:15px;
-padding:0px 7px;
+font-size:20px;
+padding:10px 30px;
 height:25px;
 border-radius:10px;
 }
@@ -395,9 +395,10 @@ border-radius:10px;
     width:350px;
     text-align:center;
     background-color:yellow;
-    border-radius:20px;
+    border-radius:10px;
     color:black;
     font-weight:300px;
+    cursor: pointer;
     font-size:20px;
     padding:8px 0px;
     margin-bottom:30px;
@@ -436,8 +437,4 @@ border-radius:10px;
     /* margin:auto; */
     background-color: rgba(0, 0, 0, 0.486);;
  }
- /* start_container
- {
-    display:flex;
-    
- } */
+ 

@@ -1,6 +1,4 @@
 // alert(window.innerHeight);
-
-
 // alert(window.innerWidth);
 let product_id=localStorage.getItem("product_id");
 let iele=document.querySelectorAll("div i[onClick]");
@@ -19,6 +17,8 @@ function arrayBufferToBase64(buffer)
 }
 
 
+
+
  async function get_product()
 {
  let base64String
@@ -35,6 +35,11 @@ const response= await fetch(`http://localhost:${window.port}/product/product_id/
 document.getElementById("img").src=`data:image/jpeg;base64,${base64String}`
 document.querySelector("#about_product p").innerHTML=product_info[0].discription;
 document.querySelector("#product_brand").innerHTML="brand"+": "+product_info[0].brand;
+if(localStorage.getItem("discount"=="true"))
+{
+    document.querySelector("#product_brand").setAttribute("discount",true);
+ 
+}
 document.querySelector("#product_price").innerHTML="price"+" :"+product_info[0].price;
 document.querySelector("#break_info").innerHTML= "break"+": "+product_info[0].break;
 quantity_maintain(product_info);
@@ -77,6 +82,7 @@ let display_qty=document.getElementById("display_qty");
 
   add_sub[1].addEventListener("click",()=>
            {
+
                if(qty>1)
                    {
                qty--;
@@ -88,8 +94,17 @@ let display_qty=document.getElementById("display_qty");
 
 async function Buy_now() {
     try {
+        if(document.querySelector("#product_brand").getAttribute("discount"))
+        {
+
+            alert("you get 30 % discount");
+            localStorage.setItem('discount',false);
+        }
+        
+    
         // Get the length of the same_product array
         let length=display_qty.innerHTML;
+        
 
         for (let i = 0; i < length; i++) {
             // Make the delete request for every product
@@ -108,7 +123,7 @@ async function Buy_now() {
         }
 
         // Redirect to home page after all deletions are complete
-        window.location.replace("http://127.0.0.1:5501/fontend/home.html");
+        window.location.replace("home.html");
 
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
@@ -314,7 +329,6 @@ for(let x of iele)
     {
         if(x.getAttribute("status")=="Active")
             { rate=x.getAttribute("data");
-            console.log(rate);
             }
      }
 
@@ -359,18 +373,17 @@ else
             exist=true;
         }
        }
-        if(exist)
-        {
-        alert("you already rate");
-        document.querySelector(".rate_container").style.display="none";
-        }
-        else
-        {
+        // if(exist)
+        // {
+        // alert("you already rate");
+        // document.querySelector(".rate_container").style.display="none";
+        // }
+       
 
             let cust_rate=new Rating(product_info[0].product_id,user_id,rate,review)
             cust_rate.store();
             document.querySelector(".rate_container").style.display="none";
-        }
+       
     }
     )
     
@@ -549,14 +562,8 @@ async function rating_user_info(event)
 
                     console.log(data);
         
-                      review_info= `  
-                      <div class="rating_container">
-                         <div class=start>
-                         <p class="rating_time" >${timeConverter(data[0].created_at)}</p>
-                         <div class="customer_name"> ${data[0].user_name}</div>
-                         <div class="review">${data[0].review}</div>
-                      </div> `;
-                     for(let i=1;i<data.length;i++)
+                      review_info= "";
+                     for(let i=0;i<data.length;i++)
                       {
                           review_info=review_info+` 
                           <div class="rating_container">

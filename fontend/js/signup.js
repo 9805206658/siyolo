@@ -1,5 +1,6 @@
 // Get elements by ID and name
 console.log(window.port);
+
 const ele_name = document.getElementById("full_name");
 const ele_phone = document.getElementById("phone");
 const ele_password = document.getElementById("password");
@@ -13,8 +14,9 @@ const terms_condition=document.getElementById("terms_condition");
 
 
 // Function to collect signup information
-function collectSignup() {
+function collectSignup(event ) {
     alert("collect the information");
+    event.preventDefault();
     const user_name = ele_name.value;
     const phone = ele_phone.value;
     const password = ele_password.value;
@@ -37,7 +39,7 @@ function collectSignup() {
         }
     }
     const dob = ele_dob.value;
-// here checking null value
+
 if(user_name=='')
     {
         alert("please enter the user name");
@@ -74,11 +76,10 @@ else if(gender=='')
     }
     else{
         console.log(user);
-
     if(user=="buyer")
         {
         alert("succefully create your account buyer account");
- // Sending collected data to the server
+ 
     fetch(`http://localhost:${window.port}/signup`, {
         method: 'POST',
         headers: {
@@ -132,5 +133,9 @@ else
 
 }
 }
+
 // Add event listener to the signup button
-btn_signup.addEventListener("click", collectSignup);
+btn_signup.addEventListener("click",(event)=>
+{
+    collectSignup(event);
+});

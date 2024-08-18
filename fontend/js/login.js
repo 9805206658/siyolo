@@ -18,7 +18,7 @@
               };
             try
             {
-           let response=await fetch(`http://localhost:${window.port}/update/login`,options)
+          await fetch(`http://localhost:${window.port}/update/login`,options)
            .then(response=>
             {
                 if(!response.ok)
@@ -26,13 +26,15 @@
                         alert("there was the newtwork problem");
 
                     }
-               return  response.json();
+               return response.json();
             }
 
            )
-           .then(data=>{
+           .then((data)=>{
             console.log(data);
-           })
+           }
+        
+        )
            }
            catch(error)
            {
@@ -52,16 +54,11 @@
     const ele_user=document.getElementsByName("user");
     console.log(ele_user);
     const port = window.port;
-    let user;
-    let user_info;
-
-
-
-    for(let i=0;i<ele_user.length;i++)
+    let user, user_info;
+   for(let i=0;i<ele_user.length;i++)
         {
             if(ele_user[i].checked)
                 {
-                
                     user=ele_user[i].value;
                     console.log(user);
                     break;
@@ -80,6 +77,7 @@
         else if(user=="")
               alert("please select user type");
         else{
+            alert("user");
         
        if(user=="buyer")
          {
@@ -129,6 +127,7 @@
         }
         else
         {
+            console.log("enter seller mode");
             console.log(window.port);
             try {
                 const response = await fetch(`http://localhost:${window.port}/sellerLogin`);

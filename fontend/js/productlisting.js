@@ -1,3 +1,4 @@
+
 let product_list=document.getElementById("product_list");
 
 let product_detail;
@@ -36,7 +37,7 @@ function show_sortlist(event)
         console.log(sort_info);
         sort_text=` 
         <div class="main_container"  onclick="navigator(event)" data=${sort_info[0].product_id}>
-         <div class="item_container">
+         <div class="item_con+tainer">
           <img src="data:image/jpeg;base64,${base64String}" alt="furry presents"/>
           <h4 class="info_describer">${sort_info[0].brand}</h4>
           <h3 class="info_describer">${sort_info[0].type}</h3>
@@ -72,6 +73,9 @@ localStorage.clear();
 // here defining the function for sorting
 function sorting_info(sort_property,product_detail)
 {
+
+    if(product_detail.length>0)
+    {
     
       let btn_sorted;
       let sorted_info=new Array();
@@ -85,48 +89,45 @@ function sorting_info(sort_property,product_detail)
                   }
           }
         // here displaying the sorting menus
-      btn_sorted=`<button onclick="show_sortlist(event)">${sorted_info[0]}</button>`;
-      for(let i=1;i<sorted_info.length;i++)
+      btn_sorted="";
+      for(let i=0;i<sorted_info.length;i++)
           {
               btn_sorted=btn_sorted+`<button  value=${sort_property} class="btn_sort"  onclick="show_sortlist(event)">${sorted_info[i]}</button>`
           }
        // here displaying the button in the page
       document.querySelector(`#${sort_property} .btn_list`).innerHTML=btn_sorted;
-
+        }
   }
 
 
   async function Product_info()
      {
-        if(localStorage.getItem("search"))
+        let status=localStorage.getItem("searchStatus");
+        
+     
+        if(localStorage.getItem("searchStatus")=="true")
             {
                 
+              
+             
                let s_d=localStorage.getItem("search");
-               await  fetch(`http://localhost:${window.port}/product/search/${s_d}`)
+               console.log(s_d);
+               localStorage.setItem("searchStatus",false);
+              await  fetch(`http://localhost:${window.port}/product/search/${s_d}`)
                .then(response=>
                 {
                     return response.json();
                 })
                 .then(result=>
                     {
-                    
+                console.log(result);
                 sorting_info("brand",result);
                 sorting_info("price",result);
                 sorting_info("color",result);
-                console.log(result);
-                base64String=arrayBufferToBase64(new Uint8Array(result[0].image.data).buffer)
-                text=` 
-              <div class="main_container"  onclick="navigator(event)" data=${result[0].product_id}>
-                 <div class="item_container" value=${result[0].id}>
-                   <img src="data:image/jpeg;base64,${base64String}" alt="furry presents"/>
-                   <h4 class="info_describer">${result[0].brand}</h4>
-                   <h3 class="info_describer">${result[0].type}</h3>
-                   <p class="info_describer">${result[0].discription}</p>
-                </div>
-               </div>`
-
-
-                for(let i=1;i<result.length;i++)
+                if(result.length!=0)
+                {
+                text="";
+               for(let i=0;i<result.length;i++)
                 {
                     base64String=arrayBufferToBase64(new Uint8Array(result[i].image.data).buffer)
                     text=text+`
@@ -141,28 +142,26 @@ function sorting_info(sort_property,product_detail)
               
                    `
                 }
-                console.log(text);
+            
+            
+                
             product_list.innerHTML=text;
+                }
         })
                
-          }
-
-
-
-        else
+    }
+    else
         {
+           
           let url=(`http://localhost:${window.port}/product`);
-
-          try{
-            const response=await fetch(url);
+          const response=await fetch(url);
             if(!response.ok)
                 {
                     throw new Error("Newtwork response was not ok"+response.statusText);
                 }
 
              product_detail=await response.json();
-
-
+             
             //  here displaying the sorting information 
             sorting_info("brand",product_detail);
             sorting_info("price",product_detail);
@@ -224,25 +223,20 @@ function sorting_info(sort_property,product_detail)
                 }
                 console.log(text);
             product_list.innerHTML=text;
+      }
         
-     }
-        
-    catch(error)
-    {
-        console.log(error);
-    }
  }
-}
+
 Product_info()   ;
 
 
 // here making funtion for navigate to the next page
-function navigator(event)
+ function navigator(event)
 {
 
 let ele=event.currentTarget;
 // console.log(ele);
 let propertyValue=ele.getAttribute("data");
 localStorage.setItem("product_id",propertyValue);
-window.location.replace("http://127.0.0.1:5501/fontend/detail.html")
+window.location.replace("detail.html")
 }

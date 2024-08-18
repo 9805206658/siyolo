@@ -8,6 +8,7 @@ constructor(id,method="reserved")
     this.id=id;
     this.method=method
 }
+
  async update_status()
 {
     this.method="reserved";
@@ -45,7 +46,7 @@ async clear_status()
         if(!response.ok)
         {
             console.log("there is was the network problem")
-l
+
         }
     }
     )
@@ -112,10 +113,13 @@ async function cart_display() {
         const idResponse = await fetch(`http://localhost:${window.port}/get_id`);
         const idData = await idResponse.json();
         const userId = idData[0].id;
+        console.log("the user id"+userId);
 
         // Fetch cart items
         const cartResponse = await fetch(`http://localhost:${window.port}/getCart/id/${userId}`);
         const cartItems = await cartResponse.json();
+    console.log("the cart items are");
+        console.log(cartItems);
 
         // Clear the cart container
         cart_container.innerHTML = '';
@@ -128,9 +132,10 @@ async function cart_display() {
         }
 
         for (let item of cartItems) {
-            const pictureData = await picture_search(item.product_Id);
+            console.log("the product id"+item.product_id);
+            const pictureData = await picture_search(item.product_id);
             const base64String = arrayBufferToBase64(new Uint8Array(pictureData[0].image.data).buffer);
-            const cartItemHTML =await createCartItemHTML(item, base64String,item.card_id,item.product_Id);
+            const cartItemHTML =await createCartItemHTML(item, base64String,item.card_id,item.product_id);
             cart_container.innerHTML += cartItemHTML;
         }
     } catch (error) {
@@ -218,12 +223,13 @@ async function quantity(item) {
   async function createCartItemHTML(item, base64String,card_id,product_id) {
     count++;
     order_summary();
+    console.log("the product id is form "+product_id);
     // here similar poduct quantity
     console.log(item);
    let len =await quantity(item);
    return `
         <div class="cart_item">
-            <input type="checkbox" name="item" id="name${count}"   data=${card_id}  onclick="update_cart_status(event)" checked />
+            <input type="checkbox" name="item" id="name${count}"   data=${card_id}  product_id=${product_id}  onclick="update_cart_status(event)" checked />
             <label for="name"><img src="data:image/jpeg;base64,${base64String}" class="cart_item_image"></label>
             <div class="cart_item_info">
                 <p>${item.discription}</p>
@@ -385,16 +391,20 @@ async function order_summary()
  function delete_card_item(event)
 {
     let ele=event.currentTarget;
+    console.log("the element information ");
+    console.log(ele);
    if(ele.getAttribute("data")=="all")
    {
     for(let i=1;i<=total_item;i++)
         {
-            check_ele=document.getElementById(`name${i}`)
-            let id=check_ele.getAttribute("data");
-            let sc=new StatusController(product_id);
+            let check_ele=document.getElementById(`name${i}`)
+            console.log(check_ele);
+        let id=check_ele.getAttribute("product_id");
+            console.log("the product id is "+id);
+            let uca=new UpdateCart(check_ele.getAttribute("data"));
+            let sc=new StatusController(check_ele.getAttribute("product_id"));
             sc.clear_status();
-            let uca=new UpdateCart(id);
-            uca.delete_cart();
+           uca.delete_cart();
         }
     }
    else
@@ -411,7 +421,7 @@ async function order_summary()
 }
 function continue_shop()
 {
-    window.location.replace(`http://127.0.0.1:5501/fontend/home.html`);
+    window.location.replace(`productListing.html`);
 }
 
 

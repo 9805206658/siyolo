@@ -42,6 +42,9 @@
 }
 .btn_sort
 {
-    padding:3px;
+    padding:10px 4px;
+    background-color:rgba(128, 128, 128, 0.354);
+    border:none;
+    border-radius:10px;
 
 }

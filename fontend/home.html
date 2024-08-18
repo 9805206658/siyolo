@@ -3,94 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" 
+    <title>Kinetic biCycle shop</title>
+    <link rel="icon" type="image/svg+xml" href="./furry.jpg" />
+     <link rel="stylesheet" 
     href="css/home.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
+        
+        
         <nav>
+            <div id="logo">
+                kbs
+            </div>
+           
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="productListing.html">Product List</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="login.html">login <i class="fa-regular fa-user"></i></a></li>
                 <li><a href="signup.html">sign up</a></li>
+                <div id="search_container">
+                    <label for="search"><i  onclick="search_implementation()" class="fa-solid fa-magnifying-glass" id="search_icon"></i></label>
+                    <input type="search"  placeholder="please name of the itemi" id="search"/>
+                </div>
             </ul>
-            <div id="search_container">
-                <label for="search"><i  onclick="search_implementation()" class="fa-solid fa-magnifying-glass" id="search_icon"></i></label>
-                <input type="search"  placeholder="please name of the itemi" id="search"/>
-            </div>
+            
          
               
         </nav>
     </header>
+
+    <section class="hero">
+    
+           <div class="imgcrousel">
+            <img src="data:image/jpeg;base64,${base64String}" alt="furry presents"/>
+
+               <div class="discount_wrapper">
+                <p>10%</p>
+                <p>discount</p>
+               </div>
+               <div class="free_deliver discount_wrapper">Free deliver</div>
+               <div class="discount_wrapper brand">brand</div>
+         </div>
+         
+    </section>
     <section class="home_container">
         <p class="sale_title">flash sale</p>
-        <div class="flash_sale">
-            <div class="main_container">
-                <div class="item_container" ">
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p  class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p  class="info_describer"><s>1000</s>-50%</p> </div>
-             </div>
-
-             <div class="main_container">
-                <div class="item_container">
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p  class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-            </div>
+        <div class="flash_sale" id="flash">
+        </div>
     </section>
 
 
@@ -103,88 +65,19 @@
     </section>
 
 
-
-
-    <section class="home_container">
-        <p class="sale_title">For You</p>
-        <div class="flash_sale">
-            <div class="main_container">
-                <div class="item_container" ">
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p  class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-
-             <div class="main_container">
-                <div class="item_container" >
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p  class="info_describer"><s>1000</s>-50%</p> </div>
-             </div>
-
-             <div class="main_container">
-                <div class="item_container">
-                 <img src="./furry.jpg" alt="furry presents"/>
-               
-                 <h3 class="info_describer">3.3 ccc</h3>
-                 <p class="info_describer">this is the  car with eheapest price</p>
-                 <p class="actual_price info_describer">Rs 500</p>
-                 <p  class="info_describer"><s>1000</s>-50%</p> </div>
-             </div> 
-            </div>
-    </section>
+<section class="home_container">
+ </section>
 
 
    
 
-    <h1 class="main_title">Our Featured Product</h1>
-    <!-- here display the marketing information -->
-    <section class="hero">
-    </section>
-    <div class="imgcrousel">
-
-    </div>
-    <footer >
+    
+   
+    
+    <footer>
         <div class="footer_header">
-            JOIN SIYOLO AND GET 10%FF 
+            JOIN <span id="companName"></span> AND GET 10%FF
+             
             <button><a href="signup.html">SIGN UP FOR FREE </a> <i class="fa-solid fa-arrow-right"></i></button>
         </div>
         <div  class="footer_container">
@@ -218,8 +111,8 @@
             <div class="footer_item">
                 <h6 class="footer_item_title">COMPNAY INFO</h6>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Siyolo stores</a></li>
-                <li><a href="#">Siyolo apps</a></li>
+                <li><a href="#">KBS stores</a></li>
+                <li><a href="#">KBS apps</a></li>
                 <li><a href="#">Entity Details</a></li>
                 <li><a href="#">Careers</a></li>
             </div>

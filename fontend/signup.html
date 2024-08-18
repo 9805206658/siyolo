@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signup</title>
+    <title>Kinetic biCycle shop</title>
+    <link rel="icon" type="image/svg+xml" href="./furry.jpg" />
+
     <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <header>
         <nav>
+            <div id="logo">
+                kbs
+            </div>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="productListing.html">Product List</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="login.html">login <i class="fa-regular fa-user"></i></a></li>
                 <li><a href="signup.html">sign up</a></li>
+                <div id="search_container">
+                    <label for="search"><i  onclick="search_implementation()" class="fa-solid fa-magnifying-glass" id="search_icon"></i></label>
+                    <input type="search"  placeholder="please name of the itemi" id="search"/>
+                </div>
             </ul>
         </nav>
     </header>
@@ -27,7 +38,7 @@
       <div class="signup_wrapper">
          <div class="signup_first_col">
              <form>
-                <label for="user" class="head_title_bold">user:</label><br>
+                <label for="user" class="head_title_bold">User:</label><br>
                  <label for="seller">seller
                      <input type="radio" name="user" id="seller" value="seller"/>
                  </label>
@@ -36,10 +47,10 @@
                  </label>
                  <br>
                  <label for="phone" class="head_title_bold">Contact number:</label><br>
-                 <input type="number" id="phone" placeholder="Please enter the contact number" class="first_col_item"/><br>
+                 <input type="number" id="phone" placeholder="Please enter the contact number" /><br>
                  <label for="password" class="head_title_bold">Password:</label><br>
-                 <input type="password" id="password" placeholder="Please enter the password"  class="first_col_item"/><br>
-                 <input type="password" id="confirm_password" placeholder="Please enter the confirm password"  class="first_col_item"/><br>
+                 <input type="password" id="password" placeholder="Please enter the password"  /><br>
+                 <input type="password" id="confirm_password" placeholder="Please enter the confirm password"  /><br>
                  <label for="gender" class="head_title_bold"    >Gender:</label><br>
                      <label for="male">Male
                          <input type="radio" name="gender" value="male" id="male" >
@@ -52,7 +63,7 @@
                     </label>
                  <br>
                  <label for="birthday" class="head_title_bold"          >Birthday:</label><br>
-                 <input type="date" id="dob" class="first_col_item"/>
+                 <input type="date" id="dob" />
               </form>
          </div>
    
@@ -60,21 +71,21 @@
 
         <div class="signup_first_col">
             <form>
-                <label for="full_name" class="head_title_bold">full name *
+                <label for="full_name" class="head_title_bold">Full Name *
                 </label><br>
-                <input type="text" id="full_name" name="fullName" placeholder="Enter your full name" required/>
+                <input type="text" id="full_name" name="fullName"  placeholder="Enter your full name" required/>
                 <br>
                 <label for="terms_condition">I accept terms and condition</label>
                 <input type="checkbox" name="terms" id="terms_condition">
                 <br>
-                <input type="button"  id="btn_signup" value="Sign Up"/>
+                <input type="button"  id="btn_signup"  value="Sign Up"/>
            </form>
         </div>
-   </div>
+      </div>
 
    <footer >
     <div class="footer_header">
-        JOIN SIYOLO AND GET 10%FF 
+        JOIN <span id="companyName"></span> AND GET 10%FF
         <button><a href="signup.html">SIGN UP FOR FREE </a> <i class="fa-solid fa-arrow-right"></i></button>
     </div>
     <div  class="footer_container">
@@ -108,9 +119,9 @@
         <div class="footer_item">
             <h6 class="footer_item_title">COMPNAY INFO</h6>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Siyolo stores</a></li>
-            <li><a href="#">Siyolo apps</a></li>
-            <li><a href="#">Entity Details</a></li>
+            <li><a href="#">KBS stores</a></li>
+            <li><a href="#">KBS apps</a></li>
+          <li><a href="#">Entity Details</a></li>
             <li><a href="#">Careers</a></li>
         </div>
 
@@ -124,6 +135,8 @@
 </footer>
 <script src="js/global.js"></script>
   <script src="js/signup.js"></script>
+  <script src="js/home.js"></script>
+
    
 </script>
 </body>

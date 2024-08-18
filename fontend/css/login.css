@@ -1,9 +1,9 @@
 #login{
-    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     row-gap:10px;
+    padding:100px 100px;
     align-items: center;
     background-image:url("/backgroud_login.jpeg");
     background-size:cover;
@@ -12,7 +12,7 @@
 {
     /* border:3px solid red;/ */
     padding:10px;
-    background-color:rgba(0, 0, 0, 0.603);
+    background-color:rgba(0, 0, 0, 0.753);
     box-shadow:3px 3px 3px black;
     border-radius:20px;
 }
