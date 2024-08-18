@@ -4,7 +4,7 @@ const cors = require('cors');
 const multer = require('multer');
 const app = express();
 const bodyParser = require('body-parser');
-const { ConsoleSqlOutlined } = require('@ant-design/icons');
+const { ConsoleSqlOutlined, CodeSandboxCircleFilled } = require('@ant-design/icons');
 
 // Middleware
 app.use(express.static("public"));
@@ -38,7 +38,7 @@ app.get("/product",(req,res)=>
         }
         else
         {
-          // console.log(result);
+          console.log(result);
           res.json(result);
         }
 
@@ -151,22 +151,19 @@ app.post('/signup', (req, res) => {
 });
 // router for signup the new seller
 app.post('/seller', (req, res) => {
- 
-  const { user_name, phone, password, gender, dob } = req.body;
-
-  // Validate input
+  console.log("enter");
+ const { user_name, phone, password, gender, dob } = req.body;
   if (!user_name || !phone || !password || !gender || !dob) {
       return res.status(400).json({ error: "All fields are required: user_name, phone, password, gender, dob" });
   }
-
   const sql = 'INSERT INTO seller(user_name, phone, password, gender, dob) VALUES (?, ?, ?, ?, ?)';
   const values = [user_name, phone, password, gender, dob];
-
   db.query(sql, values,  (err, result) => {
       if (err) {
           console.error("Database error:", err);
           return res.status(500).json({ error: "Database error" });
       }
+      console.log(result);
       res.status(201).json({ message: "User added successfully" });
   });
 });
@@ -178,13 +175,10 @@ const upload=multer({storage:storage});
 // here handling the route for the product form 
 app.post("/addProduct",upload.single('image'),(req,res)=>
 {
-//   console.log("i am hit add product");
-// console.log(req.body);
   if(!req.file)
     {
       return res.status(400).send("no file uploaded");
     }
-   
     const product_id=req.body.product_id;
     const seller_id=req.body.seller_id;
     const brand=req.body.brand;
@@ -208,6 +202,7 @@ app.post("/addProduct",upload.single('image'),(req,res)=>
           console.error("database error:",err);
           return res.status(500).json({error:"database error"});
         }
+        console.log(result)
         res.status(201).json({message:"the product is added successfully"});
         });
   })
@@ -235,7 +230,6 @@ app.post("/addProduct",upload.single('image'),(req,res)=>
 app.get("/product/brand/:brand/type/:type/discription/:discription",(req,res)=>
 {
 let cmp_prop=req.params;
-console.log("i am2222222");
 console.log(cmp_prop);
 db.query(`select * from product where 
   brand="${cmp_prop.brand}" 
@@ -471,7 +465,7 @@ app.get('/rating/id/:id',(req,res)=>
   app.get("/rating/data/:data",(req,res)=>
   {
     let data=req.params.data
-     db.query(`select signup.user_name,rating.review,rating.created_at from signup inner Join rating on id=rating.user_id where rating.rating=${data}`,(err,result)=>
+     db.query(`select signup.user_name,rating.review,rating.created_at from signup inner Join rating on signup.id=rating.user_id where rating.rating=${data}`,(err,result)=>
     {
       if(err)
         {
@@ -479,6 +473,7 @@ app.get('/rating/id/:id',(req,res)=>
         }
       else
         {
+          console.log(result);
           res.json(result);
         }
     });
@@ -572,10 +567,9 @@ app.get("/photoGet/product_id/:product_id",(req,res)=>
 // here making the end point for  updting the status of the product
 app.put("/update/product",(req,res)=>
 {
-  console.log(req.body.id);
    
  if(req.body.method=="reserved")
- {
+ { 
   db.query(`update product 
     set status="reserved" 
     where product_id=${req.body.id}`,
@@ -594,7 +588,8 @@ app.put("/update/product",(req,res)=>
 
   else if(req.body.method=="Clear")
   {
-
+    
+console.log("clear the status");
     db.query(`update product 
       set status="Clear" 
       where product_id=${req.body.id}`,
@@ -679,15 +674,18 @@ app.put("/update/cart",(req,res)=>
 
 app.get("/cart/getTotal",(req,res)=>
 {
+  console.log("enter");
   db.query(`select sum(total_price) as total_price from cart where status="Active" `,(err,result)=>
   {
     if(err)
     {
+      console.log(err);
       throw new Error(err);
 
     }
     else
     {
+      console.log(result);
       res.json(result);
 
     }
@@ -722,7 +720,7 @@ app.get("/rating/get_id",(req,res)=>
     }
     else
     {
-      // res.json(result);
+      res.json(result);
     }
   })
 })
